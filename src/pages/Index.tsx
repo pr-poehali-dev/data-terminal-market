@@ -122,7 +122,7 @@ const Index = () => {
               </Badge>
               <h1 className="font-display font-700 text-5xl md:text-7xl leading-[0.95] tracking-tight">
                 ТЕРМИНАЛЫ <br />И ПРИНТЕРЫ <br />
-                <span className="text-primary text-glow">С СЕРВИСОМ ПОД КЛЮЧ</span>
+                <span className="text-primary text-glow">СО СПЕЦИАЛИЗИРОВАННЫМ СЕРВИСНЫМ ЦЕНТРОМ</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground max-w-md">
                 Продаём и полностью обслуживаем оборудование для сбора данных
