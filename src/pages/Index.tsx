@@ -118,29 +118,29 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <Badge variant="outline" className="mb-6 border-primary/40 text-primary">
-                <Icon name="Zap" size={14} className="mr-1" /> Оборудование для автоматизации
+                <Icon name="Wrench" size={14} className="mr-1" /> Продажа и сервисное обслуживание
               </Badge>
               <h1 className="font-display font-700 text-5xl md:text-7xl leading-[0.95] tracking-tight">
                 ТЕРМИНАЛЫ <br />И ПРИНТЕРЫ <br />
-                <span className="text-primary text-glow">НОВОГО ПОКОЛЕНИЯ</span>
+                <span className="text-primary text-glow">С СЕРВИСОМ ПОД КЛЮЧ</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground max-w-md">
-                Торговая площадка профессионального оборудования для сбора данных
-                и печати этикеток. Нужный раздел — в 3 клика.
+                Продаём и полностью обслуживаем оборудование для сбора данных
+                и печати этикеток: настройка, ремонт, подменный фонд и выезд инженера.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button size="lg" onClick={() => scrollTo('catalog')} className="font-medium">
-                  Открыть каталог
+                <Button size="lg" onClick={() => scrollTo('support')} className="font-medium">
+                  Услуги сервиса
                   <Icon name="ArrowRight" size={18} className="ml-1" />
                 </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollTo('compare')} className="font-medium border-border">
-                  Сравнить модели
+                <Button size="lg" variant="outline" onClick={() => scrollTo('catalog')} className="font-medium border-border">
+                  Открыть каталог
                 </Button>
               </div>
               <div className="mt-10 grid grid-cols-3 gap-6 max-w-sm">
                 {[
-                  { v: '500+', l: 'моделей' },
-                  { v: '24/7', l: 'поддержка' },
+                  { v: '7 дней', l: 'срок ремонта' },
+                  { v: 'Выезд', l: 'инженера' },
                   { v: '2 года', l: 'гарантия' },
                 ].map((s) => (
                   <div key={s.l}>
@@ -298,48 +298,87 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SUPPORT */}
-      <section id="support" className="py-20">
-        <div className="container grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <span className="text-primary text-sm uppercase tracking-widest">Поддержка</span>
-            <h2 className="font-display font-700 text-4xl md:text-5xl mt-2 mb-6">ПОМОЖЕМ 24/7</h2>
-            <p className="text-muted-foreground mb-8">
-              Настройка, прошивка, ремонт и консультации по подбору оборудования.
-              Сервисный центр и горячая линия для всех клиентов.
+      {/* SUPPORT — сервисное обслуживание */}
+      <section id="support" className="py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px]" />
+        <div className="container relative">
+          <div className="max-w-2xl mb-12">
+            <span className="text-primary text-sm uppercase tracking-widest">Сервисное обслуживание</span>
+            <h2 className="font-display font-700 text-4xl md:text-5xl mt-2 mb-4">
+              ВАШЕ ОБОРУДОВАНИЕ <span className="text-primary text-glow">ВСЕГДА В СТРОЮ</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Берём на себя весь жизненный цикл оборудования — от настройки до ремонта.
+              Собственный сервисный центр, подменный фонд и инженеры с выездом к вам.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+            {[
+              { icon: 'Wrench', title: 'Ремонт и диагностика', desc: 'Восстановим терминалы и принтеры любой сложности. Средний срок — 7 дней.' },
+              { icon: 'RefreshCw', title: 'Подменный фонд', desc: 'Выдаём оборудование на замену на время ремонта — работа не встанет.' },
+              { icon: 'Settings', title: 'Настройка и прошивка', desc: 'Конфигурируем устройства под ваши задачи и обновляем ПО.' },
+              { icon: 'Truck', title: 'Выезд инженера', desc: 'Специалист приедет на объект для обслуживания и пуско-наладки.' },
+              { icon: 'CalendarCheck', title: 'Договор на сервис', desc: 'Регулярное ТО по контракту с фиксированной стоимостью.' },
+              { icon: 'GraduationCap', title: 'Обучение и внедрение', desc: 'Обучаем сотрудников и интегрируем технику в вашу систему.' },
+            ].map((s) => (
+              <Card key={s.title} className="p-6 border-border bg-card hover:glow-border transition-all duration-300 group">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name={s.icon} size={24} />
+                </div>
+                <h3 className="font-display font-600 text-lg">{s.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mb-16">
+            <h3 className="font-display font-600 text-2xl mb-8 text-center">Как проходит обслуживание</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
-                { icon: 'Headset', title: 'Горячая линия', desc: 'Ответим за 2 минуты' },
-                { icon: 'Wrench', title: 'Сервисный центр', desc: 'Ремонт и обслуживание' },
-                { icon: 'Download', title: 'Драйверы и ПО', desc: 'Всегда под рукой' },
-                { icon: 'GraduationCap', title: 'Обучение', desc: 'Внедрение под ключ' },
+                { n: '01', icon: 'PhoneCall', t: 'Заявка', d: 'Оставляете заявку или звоните' },
+                { n: '02', icon: 'Search', t: 'Диагностика', d: 'Определяем причину и сроки' },
+                { n: '03', icon: 'Wrench', t: 'Ремонт', d: 'Чиним, выдаём подмену' },
+                { n: '04', icon: 'CheckCircle2', t: 'Выдача', d: 'Возвращаем с гарантией' },
               ].map((s) => (
-                <Card key={s.title} className="p-5 border-border bg-card hover:glow-border transition-all">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary mb-3">
-                    <Icon name={s.icon} size={20} />
-                  </div>
-                  <h3 className="font-600">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
-                </Card>
+                <div key={s.n} className="relative p-6 rounded-xl border border-border bg-card">
+                  <span className="absolute top-4 right-5 font-display font-700 text-4xl text-primary/15">{s.n}</span>
+                  <Icon name={s.icon} size={26} className="text-primary mb-4" />
+                  <h4 className="font-600 text-lg">{s.t}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{s.d}</p>
+                </div>
               ))}
             </div>
           </div>
-          <div>
-            <h3 className="font-display font-600 text-2xl mb-4">Частые вопросы</h3>
-            <Accordion type="single" collapsible className="w-full">
-              {[
-                { q: 'Какой терминал выбрать для склада?', a: 'Для складских задач подойдут модели ScanPro X5 и DataForce R8 с дальнобойным 2D-сканером и защитой от пыли и влаги.' },
-                { q: 'Чем отличается термо от термотрансфера?', a: 'Термопечать дешевле, но этикетки выцветают. Термотрансфер даёт стойкое изображение — для маркировки на годы.' },
-                { q: 'Есть ли гарантия и сервис?', a: 'На всё оборудование 2 года гарантии. Собственный сервисный центр и подменный фонд на время ремонта.' },
-                { q: 'Помогаете с внедрением?', a: 'Да, проводим настройку, интеграцию с вашей учётной системой и обучение сотрудников под ключ.' },
-              ].map((f, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="border-border">
-                  <AccordionTrigger className="text-left hover:text-primary">{f.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h3 className="font-display font-600 text-2xl mb-4">Частые вопросы по сервису</h3>
+              <Accordion type="single" collapsible className="w-full">
+                {[
+                  { q: 'Сколько занимает ремонт?', a: 'Средний срок — 7 рабочих дней. На сложные случаи сообщаем срок после диагностики. На время ремонта выдаём подменное оборудование.' },
+                  { q: 'Обслуживаете технику не из вашего каталога?', a: 'Да, ремонтируем и обслуживаем терминалы и принтеры большинства производителей, даже если вы покупали их не у нас.' },
+                  { q: 'Как работает договор на обслуживание?', a: 'Заключаем сервисный контракт с регулярным ТО, приоритетной поддержкой и фиксированной стоимостью — без сюрпризов в бюджете.' },
+                  { q: 'Есть ли гарантия на ремонт?', a: 'На все выполненные работы и заменённые детали даём гарантию. На новое оборудование — 2 года.' },
+                ].map((f, i) => (
+                  <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                    <AccordionTrigger className="text-left hover:text-primary">{f.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+            <Card className="p-8 border-border bg-card glow-border">
+              <Icon name="Headset" size={32} className="text-primary mb-4" />
+              <h3 className="font-display font-600 text-2xl mb-2">Нужен сервис?</h3>
+              <p className="text-muted-foreground mb-6">
+                Оставьте заявку — инженер свяжется с вами, оценит проблему и предложит решение.
+              </p>
+              <Button size="lg" onClick={() => scrollTo('contacts')} className="w-full font-medium">
+                Оставить заявку на сервис
+                <Icon name="ArrowRight" size={18} className="ml-1" />
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
