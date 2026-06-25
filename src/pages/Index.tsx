@@ -316,8 +316,6 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
             {[
               { icon: 'Wrench', title: 'Ремонт и диагностика', desc: 'Восстановим терминалы и принтеры любой сложности. Средний срок — 7 дней.' },
-              { icon: 'RefreshCw', title: 'Подменный фонд', desc: 'Выдаём оборудование на замену на время ремонта — работа не встанет.' },
-              { icon: 'Settings', title: 'Настройка и прошивка', desc: 'Конфигурируем устройства под ваши задачи и обновляем ПО.' },
               { icon: 'Truck', title: 'Выезд инженера', desc: 'Специалист приедет на объект для обслуживания и пуско-наладки.' },
             ].map((s) => (
               <Card key={s.title} className="p-6 border-border bg-card hover:glow-border transition-all duration-300 group">
