@@ -126,7 +126,7 @@ const Index = () => {
               </h1>
               <p className="mt-6 text-lg text-muted-foreground max-w-md">
                 Продаём и полностью обслуживаем оборудование для сбора данных
-                и печати этикеток: настройка, ремонт, подменный фонд и выезд инженера.
+                и печати этикеток.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" onClick={() => scrollTo('support')} className="font-medium">
