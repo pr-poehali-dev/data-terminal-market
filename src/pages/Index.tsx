@@ -319,8 +319,6 @@ const Index = () => {
               { icon: 'RefreshCw', title: 'Подменный фонд', desc: 'Выдаём оборудование на замену на время ремонта — работа не встанет.' },
               { icon: 'Settings', title: 'Настройка и прошивка', desc: 'Конфигурируем устройства под ваши задачи и обновляем ПО.' },
               { icon: 'Truck', title: 'Выезд инженера', desc: 'Специалист приедет на объект для обслуживания и пуско-наладки.' },
-              { icon: 'CalendarCheck', title: 'Договор на сервис', desc: 'Регулярное ТО по контракту с фиксированной стоимостью.' },
-              { icon: 'GraduationCap', title: 'Обучение и внедрение', desc: 'Обучаем сотрудников и интегрируем технику в вашу систему.' },
             ].map((s) => (
               <Card key={s.title} className="p-6 border-border bg-card hover:glow-border transition-all duration-300 group">
                 <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4 group-hover:scale-110 transition-transform">
