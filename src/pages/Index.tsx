@@ -338,7 +338,7 @@ const Index = () => {
               {[
                 { n: '01', icon: 'PhoneCall', t: 'Заявка', d: 'Оставляете заявку или звоните' },
                 { n: '02', icon: 'Search', t: 'Диагностика', d: 'Определяем причину и сроки' },
-                { n: '03', icon: 'Wrench', t: 'Ремонт', d: 'Чиним, выдаём подмену' },
+                { n: '03', icon: 'Wrench', t: 'Ремонт', d: 'Чиним' },
                 { n: '04', icon: 'CheckCircle2', t: 'Выдача', d: 'Возвращаем с гарантией' },
               ].map((s) => (
                 <div key={s.n} className="relative p-6 rounded-xl border border-border bg-card">
